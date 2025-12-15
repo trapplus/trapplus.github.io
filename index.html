@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Проявление</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #3c3836 0%, #504945 50%, #665c54 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .word-container {
+            font-size: 15vw;
+            font-weight: 700;
+            color: #fbf1c7;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-shadow: 
+                0 0 40px rgba(251, 241, 199, 0.3),
+                0 0 80px rgba(251, 241, 199, 0.2),
+                0 0 120px rgba(251, 241, 199, 0.1);
+            animation: reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            filter: blur(40px);
+            transform: translateY(30px) scale(0.95);
+        }
+
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+                filter: blur(40px) brightness(0.5);
+                transform: translateY(30px) scale(0.95);
+            }
+            40% {
+                opacity: 0.3;
+                filter: blur(25px) brightness(0.7);
+                transform: translateY(15px) scale(0.97);
+            }
+            70% {
+                opacity: 0.7;
+                filter: blur(8px) brightness(0.9);
+                transform: translateY(5px) scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0px) brightness(1);
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(40, 40, 40, 0.4) 100%);
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
-    соси
+    <div class="word-container">Соси</div>
 </body>
 </html>
