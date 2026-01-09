@@ -1,207 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eviltrapgod | Software Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Проявление</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #3c3836 0%, #504945 50%, #665c54 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .word-container {
+            font-size: 15vw;
+            font-weight: 700;
+            color: #fbf1c7;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-shadow: 
+                0 0 40px rgba(251, 241, 199, 0.3),
+                0 0 80px rgba(251, 241, 199, 0.2),
+                0 0 120px rgba(251, 241, 199, 0.1);
+            animation: reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            filter: blur(40px);
+            transform: translateY(30px) scale(0.95);
+        }
+
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+                filter: blur(40px) brightness(0.5);
+                transform: translateY(30px) scale(0.95);
+            }
+            40% {
+                opacity: 0.3;
+                filter: blur(25px) brightness(0.7);
+                transform: translateY(15px) scale(0.97);
+            }
+            70% {
+                opacity: 0.7;
+                filter: blur(8px) brightness(0.9);
+                transform: translateY(5px) scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0px) brightness(1);
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Добавляем тонкий эффект виньетки */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(40, 40, 40, 0.4) 100%);
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img src="./assets/avatar.svg" alt="Profile Image">
-            </div>
-            
-            <div class="profile-info">
-                <div class="name-title">
-                    <h1 class="name">Eviltrapgod</h1>
-                    <div class="title">Software Developer & Systems Engineer</div>
-                    <div class="badges">
-                        <span class="badge">17 y.o.</span>
-                        <span class="badge">Russia</span>
-                        <span class="badge">Full-Time Developer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="about-section">
-            <h2 class="section-title">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                About Me
-            </h2>
-            <p class="about-text">
-                I'm a 17-year-old software developer from Russia with expertise in Python, C++, Rust, and Linux systems. 
-                I specialize in building robust backend systems, developing cross-platform applications, and 
-                implementing efficient DevOps solutions. My work focuses on creating scalable and maintainable 
-                software with a strong emphasis on performance and security. I'm passionate about open-source 
-                development and contributing to the tech community.
-            </p>
-        </div>
-        
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3 class="skill-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 8h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1"></path>
-                        <path d="M3 14h18"></path>
-                        <path d="M12 18v-6"></path>
-                    </svg>
-                    Python
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">Base</div>
-                    <div class="skill-item">OOP</div>
-                    <div class="skill-item">PyQt6</div>
-                    <div class="skill-item">FastAPI</div>
-                    <div class="skill-item">aiogram</div>
-                    <div class="skill-item">SQLAlchemy</div>
-                    <div class="skill-item">Pydantic</div>
-                    <div class="skill-item">httpx</div>
-                    <div class="skill-item">asyncio</div>
-                    <div class="skill-item">Threading</div>
-                    <div class="skill-item">Tk/CTk</div>
-                    <div class="skill-item">Testing</div>
-                    <div class="skill-item">UV</div>
-                    <div class="skill-item">Lints</div>
-                    <div class="skill-item">pypackages</div>
-                    <div class="skill-item">Typing</div>
-                </div>
-            </div>
-            
-            <div class="skill-card">
-                <h3 class="skill-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 20h9"></path>
-                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                    </svg>
-                    C++ & Rust
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">C++ Base</div>
-                    <div class="skill-item">Qt6</div>
-                    <div class="skill-item">Rust Base</div>
-                    <div class="skill-item">Memory Mgmt</div>
-                    <div class="skill-item">Multithreading</div>
-                    <div class="skill-item">Cargo</div>
-                    <div class="skill-item">Leangs</div>
-                    <div class="skill-item">OOP</div>
-                </div>
-            </div>
-            
-            <div class="skill-card">
-                <h3 class="skill-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2v20"></path>
-                        <path d="M17 5H9.5a2.5 2.5 0 0 0 0 5h5a2.5 2.5 0 0 1 0 5H6"></path>
-                    </svg>
-                    Linux & Ops
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">Filesystem</div>
-                    <div class="skill-item">Bash</div>
-                    <div class="skill-item">rsync</div>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">Loki</div>
-                    <div class="skill-item">Prometheus</div>
-                    <div class="skill-item">Grafana</div>
-                    <div class="skill-item">CI/CD</div>
-                    <div class="skill-item">Kubernetes</div>
-                    <div class="skill-item">Low-level Conf</div>
-                    <div class="skill-item">Lua Config</div>
-                </div>
-            </div>
-            
-            <div class="skill-card">
-                <h3 class="skill-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 8v8"></path>
-                        <path d="m8 12 4 4 4-4"></path>
-                    </svg>
-                    Other
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">Git</div>
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">Vim</div>
-                    <div class="skill-item">Hardware</div>
-                    <div class="skill-item">Android ROM</div>
-                    <div class="skill-item">Android Ecosystem</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="contacts-container">
-            <div class="contact-card">
-                <h3 class="contact-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Contacts
-                </h3>
-                <div class="contact-list">
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <span>Email</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <span>Telegram</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                        <span>GitHub</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
-                            <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
-                            <path d="M12 15a6 6 0 0 0-6 6h12a6 6 0 0 0-6-6z"></path>
-                        </svg>
-                        <span>VK</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="language-card">
-                <h3 class="language-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 8h14M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM19 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 12h12M6 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 16h8M8 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM16 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
-                    </svg>
-                    Languages
-                </h3>
-                <div class="language-item">
-                    <span class="language-name">Russian</span>
-                    <span class="language-level">Native</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">English</span>
-                    <span class="language-level">B1+</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>© 2026 Eviltrapgod. All rights reserved.</p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <div class="word-container">Соси</div>
 </body>
 </html>
